@@ -1,0 +1,1 @@
+"Create By Name" extension for Multimedia Fusion 2 allows you to create objects by using their name instead of using an object selector.
