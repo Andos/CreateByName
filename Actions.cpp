@@ -114,6 +114,8 @@ void Extension::CreateBackdropAtPosXY(char* objName, int x, int y, int type, int
 	LPOI* ois = rhPtr->rhApp->m_ois;
 	LPOBL oblPtr = (LPOBL)rhPtr->rhObjectList;
 
+	int additionalLayerSize = isHWA ? 8 : 0;
+
 	CRunFrame* frame = (CRunFrame*)rhPtr->rhFrame;
 	RunFrameLayer* layerPtr = frame->m_pLayers;
 
@@ -145,6 +147,6 @@ void Extension::CreateBackdropAtPosXY(char* objName, int x, int y, int type, int
 			}
 			backdropPtr++;
 		}
-		layerPtr++;
+		layerPtr = (RunFrameLayer*)(((char*)layerPtr++)+additionalLayerSize);
 	}
 }
