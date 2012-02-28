@@ -17,12 +17,6 @@ Extension::Extension(LPRDATA _rdPtr, LPEDATA edPtr, fpcob cobPtr)
 	LinkExpression(0, NameFromFixed);
 
 	oiListItemSize = sizeof(objInfoList);
-	if ( Runtime.IsUnicode() )
-	{
-		oiListItemSize += 24;
-		isUnicode = true;
-		//codepage = (UINT)pMv->mvCallFunction(NULL, EF_GETAPPCODEPAGE, (LPARAM)rhPtr->rhApp, 0, 0);
-	}
 	if ( Runtime.IsHWA() )
 	{
 		oiListItemSize += sizeof(LPVOID);

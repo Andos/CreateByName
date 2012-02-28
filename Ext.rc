@@ -1,4 +1,5 @@
-
+// Microsoft Visual C++ generated resource script.
+//
 #include "resource.h"
 
 #define APSTUDIO_READONLY_SYMBOLS
@@ -6,14 +7,33 @@
 //
 // Generated from the TEXTINCLUDE 2 resource.
 //
-#include "..\..\inc\ccx.h"
+#include "..\..\Inc\ccx.h"
 #define APSTUDIO_HIDDEN_SYMBOLS
 #include "windows.h"
-
 #undef APSTUDIO_HIDDEN_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// EDIF
+//
+
+IDR_EDIF_JSON           EDIF                    "Resources\\CreateByName.json"
+IDR_EDIF_ICON           EDIF                    "Resources\\CreateByName.png"
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
 
 /////////////////////////////////////////////////////////////////////////////
 // English (U.S.) resources
@@ -24,7 +44,6 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
 #endif //_WIN32
 
-#ifndef _MAC
 /////////////////////////////////////////////////////////////////////////////
 //
 // Version
@@ -47,18 +66,14 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "Comments", "\0"
-            VALUE "CompanyName", "Clickteam\0"
-            VALUE "FileDescription", "V2Template32 Object\0"
-            VALUE "FileVersion", "2.00\0"
-            VALUE "InternalName", "V2TEMPLATE32\0"
-            VALUE "LegalCopyright", "Copyright © 2000 Clickteam\0"
-            VALUE "LegalTrademarks", "\0"
-            VALUE "OriginalFilename", "V2TEMPLATE32.mfx\0"
-            VALUE "PrivateBuild", "\0"
-            VALUE "ProductName", "\0"
-            VALUE "ProductVersion", "1, 0, 0, 0\0"
-            VALUE "SpecialBuild", "00000001\0"
+            VALUE "CompanyName", "AndersRiggelsen"
+            VALUE "FileDescription", "CreateByName"
+            VALUE "FileVersion", "2.00"
+            VALUE "InternalName", "CreateByName"
+            VALUE "LegalCopyright", "Copyright © 2012 Anders Riggelsen"
+            VALUE "OriginalFilename", "CreateByName.mfx"
+            VALUE "ProductVersion", "1, 0, 0, 0"
+            VALUE "SpecialBuild", "00000001"
         END
     END
     BLOCK "VarFileInfo"
@@ -67,15 +82,13 @@ BEGIN
     END
 END
 
-#endif    // !_MAC
-
 
 /////////////////////////////////////////////////////////////////////////////
 //
-// Data
+// RCDATA
 //
 
-KPX_MAGICNUMBER RCDATA MOVEABLE PURE 
+KPX_MAGICNUMBER RCDATA 
 BEGIN
     0x2516, 0x5908
 END
@@ -87,12 +100,12 @@ END
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE DISCARDABLE 
+1 TEXTINCLUDE 
 BEGIN
     "resource.h\0"
 END
 
-2 TEXTINCLUDE DISCARDABLE 
+2 TEXTINCLUDE 
 BEGIN
     "#include ""..\\..\\Inc\\ccx.h""\r\n"
     "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
@@ -101,7 +114,7 @@ BEGIN
     "\0"
 END
 
-3 TEXTINCLUDE DISCARDABLE 
+3 TEXTINCLUDE 
 BEGIN
     "\r\n"
     "\0"
@@ -115,15 +128,10 @@ END
 // String Table
 //
 
-#define APSTUDIO_READONLY_SYMBOLS
-
-STRINGTABLE DISCARDABLE 
+STRINGTABLE 
 BEGIN
     KPX_MARK                "MF2"
 END
-
-#undef APSTUDIO_READONLY_SYMBOLS
-
 
 #endif    // English (U.S.) resources
 /////////////////////////////////////////////////////////////////////////////

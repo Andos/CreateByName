@@ -1,16 +1,17 @@
 
 #include "Common.h"
 
-void Extension::CreateAtPos(char* objName, eventParam* evtParam, int layer)
+void Extension::CreateAtPos(LPTSTR objName, eventParam* evtParam, int layer)
 {
 	//Iterate OI list
 	objInfoList* list = rhPtr->rhOiList;
 	int num = rhPtr->rhNumberOi-1;
 	short creationOI = -1;
+	
 	for(int i=0; i<num; i++)
 	{
 		objInfoList info = *(objInfoList*)(((char*)list) + i*oiListItemSize);
-		if (! strcmp((char*)&info.oilName, objName))
+		if (! _tcscmp((TCHAR*)&info.oilName, objName))
 			creationOI = info.oilOi;
 	}
 	//No object was found
@@ -51,16 +52,17 @@ void Extension::CreateAtPos(char* objName, eventParam* evtParam, int layer)
 	free(buffer);
 }
 
-void Extension::CreateAtPosXY(char* objName, int x, int y, int layer)
+void Extension::CreateAtPosXY(LPTSTR objName, int x, int y, int layer)
 {
 	//Iterate OI list
 	objInfoList* list = rhPtr->rhOiList;
 	int num = rhPtr->rhNumberOi-1;
 	short creationOI = -1;
+
 	for(int i=0; i<num; i++)
 	{
-		objInfoList info = list[i];
-		if (! strcmp((char*)&info.oilName, objName))
+		objInfoList info = *(objInfoList*)(((char*)list) + i*oiListItemSize);
+		if (! _tcscmp((TCHAR*)&info.oilName, objName))
 			creationOI = info.oilOi;
 	}
 	//No object was found
@@ -104,12 +106,12 @@ void Extension::CreateAtPosXY(char* objName, int x, int y, int layer)
 	free(buffer);
 }
 
-void Extension::CreateBackdropAtPos(char* objName, long position, int type, int layer)
+void Extension::CreateBackdropAtPos(LPTSTR objName, long position, int type, int layer)
 {
 	CreateBackdropAtPosXY(objName, HIWORD(position), LOWORD(position), type, layer);
 }
 
-void Extension::CreateBackdropAtPosXY(char* objName, int x, int y, int type, int layer)
+void Extension::CreateBackdropAtPosXY(LPTSTR objName, int x, int y, int type, int layer)
 {
 	LPOI* ois = rhPtr->rhApp->m_ois;
 	LPOBL oblPtr = (LPOBL)rhPtr->rhObjectList;
@@ -126,7 +128,7 @@ void Extension::CreateBackdropAtPosXY(char* objName, int x, int y, int type, int
 		for( int j = 0; j<(int)layerPtr->nBkdLOs; ++j )
 		{
 			LPOI objOI = rhPtr->rhApp->m_ois[rhPtr->rhApp->m_oi_handle_to_index[backdropPtr->loOiHandle]];
-			if( strcmp(objOI->oiName,objName) == 0 )
+			if( _tcscmp(objOI->oiName,objName) == 0 )
 			{
 				LPBackdrop_OC test = (LPBackdrop_OC)objOI->oiOC;
 

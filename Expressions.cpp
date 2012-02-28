@@ -1,10 +1,10 @@
 
 #include "Common.h"
 
-char* Extension::NameFromFixed(int fixed)
+TCHAR* Extension::NameFromFixed(int fixed)
 {
 	LPRO object = Runtime.LPROFromFixed(fixed);
 	if(object == NULL)
-		return Runtime.CopyString("");
-	return Runtime.CopyString((char*)&object->roHo.hoOiList->oilName);
+		return Runtime.CopyString(TEXT(""));
+	return Runtime.CopyString(object->roHo.hoOiList->oilName);
 }

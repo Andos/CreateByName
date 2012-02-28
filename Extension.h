@@ -30,32 +30,31 @@ public:
         a pointer.
     */
 
-	bool isUnicode;
 	bool isHWA;
 	UINT codepage;
 
     /// Actions
-    void CreateAtPos(char* objName, eventParam* evtParam, int layer);
-    void CreateAtPosXY(char* objName, int x, int y, int layer);
-	void CreateBackdropAtPos(char* objName, long position, int type, int layer);
-	void CreateBackdropAtPosXY(char* objName, int x, int y, int type, int layer);
+	void CreateAtPos(LPTSTR objName, eventParam* evtParam, int layer);
+	void CreateAtPosXY(LPTSTR objName, int x, int y, int layer);
+	void CreateBackdropAtPos(LPTSTR objName, long position, int type, int layer);
+	void CreateBackdropAtPosXY(LPTSTR objName, int x, int y, int type, int layer);
 
 	/// Expressions
-	char* NameFromFixed(int fixed);
+	TCHAR* NameFromFixed(int fixed);
 
     // These are called if there's no function linked to an ID
-    void Action(int ID, LPRDATA rdPtr, long param1, long param2);
-    long Condition(int ID, LPRDATA rdPtr, long param1, long param2);
-    long Expression(int ID, LPRDATA rdPtr, long param);
+	void Action(int ID, LPRDATA rdPtr, long param1, long param2);
+	long Condition(int ID, LPRDATA rdPtr, long param1, long param2);
+	long Expression(int ID, LPRDATA rdPtr, long param);
 
 
 	short Handle();
-    short Display();
+	short Display();
 
-    short Pause();
-    short Continue();
+	short Pause();
+	short Continue();
 
-    bool Save(HANDLE File);
-    bool Load(HANDLE File);
+	bool Save(HANDLE File);
+	bool Load(HANDLE File);
 
 };
