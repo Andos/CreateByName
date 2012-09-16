@@ -73,7 +73,7 @@ package Extensions
 					y = act.getParamExpression(rh, 2);
 					type = act.getParamExpression(rh, 3);
 					layer = act.getParamExpression(rh, 4);
-					createBackdrop(name, position.x, position.y, type, layer);
+					createBackdrop(name, x, y, type, layer);
 					break;
 				}
 			}
@@ -106,7 +106,7 @@ package Extensions
 				var info:CObjInfo = rh.rhOiList[i];
 				if(info.oilName == objName)
 				{
-					creationOi = i;
+					creationOi = info.oilOi;
 					break;
 				}
 			}
