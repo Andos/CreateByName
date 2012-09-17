@@ -1,0 +1,136 @@
+{
+    "About": {
+        "Name": "Create By Name",
+        "Author": "Anders Riggelsen",
+        "Copyright": "Copyright (C) 2012 Anders Riggelsen",
+        "Comment": "Lets you create an object by name instead of using the selector dialog.",
+        "URL": "http://www.andersriggelsen.dk",
+        "Help": "Help/CreateByName.chm",
+        "Identifier": "CbNa"
+    },
+    "ActionMenu": [
+        [
+            0,
+            "Create object at position"
+        ],
+        [
+            1,
+            "Create object at (X,Y)"
+        ],
+        "Separator",
+        [
+            2,
+            "Create backdrop at position"
+        ],
+        [
+            3,
+            "Create backdrop at (X, Y)"
+        ],
+        "Separator"
+    ],
+    "Actions": [
+        {
+            "Title": "Create %0 at %1 on layer %2",
+            "Parameters": [
+                [
+                    "Text",
+                    "Object name"
+                ],
+                [
+                    "SysCreate",
+                    "Choose a position"
+                ],
+                [
+                    "Integer",
+                    "Layer number (0-based)"
+                ]
+            ]
+        },
+        {
+            "Title": "Create %0 at (%1, %2) on layer %3",
+            "Parameters": [
+                [
+                    "Text",
+                    "Object name"
+                ],
+                [
+                    "Integer",
+                    "X position"
+                ],
+                [
+                    "Integer",
+                    "Y position"
+                ],
+                [
+                    "Integer",
+                    "Layer number (0-based)"
+                ]
+            ]
+        },
+        {
+            "Title": "Create backdrop %0 at %1 on layer %3 and obstacle: %2",
+            "Parameters": [
+                [
+                    "Text",
+                    "Backdrop name"
+                ],
+                [
+                    "Position",
+                    "Choose a position"
+                ],
+                [
+                    "Integer",
+                    "Collision: 0=None, 1=Obstacle, 2=Platform, 3=Ladder, 4=No effect"
+                ],
+                [
+                    "Integer",
+                    "Layer number (0-based)"
+                ]
+            ]
+        },
+        {
+            "Title": "Create backdrop %0 at (%1, %2) on layer %4 and obstacle: %3",
+            "Parameters": [
+                [
+                    "Text",
+                    "Backdrop name"
+                ],
+                [
+                    "Integer",
+                    "X position"
+                ],
+                [
+                    "Integer",
+                    "Y position"
+                ],
+                [
+                    "Integer",
+                    "Collision: 0=None, 1=Obstacle, 2=Platform, 3=Ladder, 4=No effect"
+                ],
+                [
+                    "Integer",
+                    "Layer number (0-based)"
+                ]
+            ]
+        }
+    ],
+    "ExpressionMenu": [
+        [
+            0,
+            "Get object name from fixed value"
+        ],
+        "Separator"
+    ],
+    "Expressions": [
+        {
+            "Title": "NameFromFixed$(",
+            "Returns": "Text",
+            "Parameters": [
+                [
+                    "Integer",
+                    "Fixed"
+                ]
+            ]
+        }
+    ]
+}
